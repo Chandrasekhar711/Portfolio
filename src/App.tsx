@@ -9,7 +9,6 @@ import {
   Mail,
   Menu,
   Moon,
-  Send,
   Sun,
   Trophy,
   X,
@@ -186,7 +185,7 @@ const projects = [
     tech: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     description:
       'A modern, animated portfolio website showcasing skills, projects, certifications, and contact details.',
-    github: 'https://github.com/Chandrasekhar711',
+    github: 'https://github.com/Chandrasekhar711/Portfolio',
   },
 ]
 
@@ -218,7 +217,7 @@ const internshipCertificateUrl =
 
 const socials = [
   { icon: GithubIcon, label: 'GitHub', href: 'https://github.com/Chandrasekhar711' },
-  { icon: LinkedinIcon, label: 'LinkedIn', href: 'https://www.linkedin.com/in/chandra-sekhar-pampana' },
+  { icon: LinkedinIcon, label: 'LinkedIn', href: 'https://www.linkedin.com/in/chandra-sekhar-pampana/' },
   { icon: Mail, label: 'Email', href: 'mailto:chandrasekharpampana93@gmail.com' },
 ]
 
@@ -230,7 +229,6 @@ function App() {
   const heroRef = useRef<HTMLDivElement>(null)
   const [darkMode, setDarkMode] = useState(true)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [copied, setCopied] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [formData, setFormData] = useState({
     name: '',
@@ -288,12 +286,6 @@ function App() {
 
   const emailAddress = 'chandrasekharpampana93@gmail.com'
 
-  const copyEmail = async () => {
-    await navigator.clipboard.writeText(emailAddress)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
-
   const handleContactSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
@@ -309,9 +301,7 @@ function App() {
     ? 'bg-slate-950 text-slate-50'
     : 'bg-slate-50 text-slate-900'
 
-  const surfaceClass = darkMode
-    ? 'bg-white/5 border-white/10 text-slate-100'
-    : 'bg-white border-slate-200/80 shadow-md shadow-slate-100 text-slate-800'
+
 
   const inputClass = darkMode
     ? 'bg-[#05070c] border-slate-800 text-white placeholder:text-slate-500 focus:border-violet-500 focus:ring-1 focus:ring-violet-500'
